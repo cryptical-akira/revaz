@@ -31,25 +31,49 @@ setInterval(tickClock, 1000);
 // ========== CUSTOM CURSOR ==========
 const cursor = document.querySelector('.cursor');
 const cursorDot = document.querySelector('.cursor-dot');
-let mx = 0, my = 0, cx = 0, cy = 0;
+const isTouch = matchMedia('(pointer:coarse)').matches;
 
-window.addEventListener('mousemove', (e) => {
-  mx = e.clientX; my = e.clientY;
-  if (cursorDot) { cursorDot.style.left = mx + 'px'; cursorDot.style.top = my + 'px'; }
-});
+if (cursor && cursorDot && !isTouch) {
+  let mx = 0, my = 0, cx = 0, cy = 0;
+  let visible = false;
 
-const follow = () => {
-  cx += (mx - cx) * 0.18;
-  cy += (my - cy) * 0.18;
-  if (cursor) { cursor.style.left = cx + 'px'; cursor.style.top = cy + 'px'; }
-  requestAnimationFrame(follow);
-};
-follow();
+  const show = () => {
+    if (visible) return;
+    visible = true;
+    cursor.style.opacity = '1';
+    cursorDot.style.opacity = '1';
+  };
+  cursor.style.opacity = '0';
+  cursorDot.style.opacity = '0';
 
-document.querySelectorAll('a, button, .card, .beyond-card, .spec, .c-link, .tags span, .project.featured').forEach(el => {
-  el.addEventListener('mouseenter', () => cursor?.classList.add('hover'));
-  el.addEventListener('mouseleave', () => cursor?.classList.remove('hover'));
-});
+  window.addEventListener('mousemove', (e) => {
+    mx = e.clientX; my = e.clientY;
+    cursorDot.style.transform = `translate3d(${mx}px, ${my}px, 0)`;
+    show();
+  }, { passive: true });
+
+  window.addEventListener('mouseleave', () => {
+    cursor.style.opacity = '0';
+    cursorDot.style.opacity = '0';
+    visible = false;
+  });
+
+  const follow = () => {
+    cx += (mx - cx) * 0.22;
+    cy += (my - cy) * 0.22;
+    cursor.style.transform = `translate3d(${cx}px, ${cy}px, 0)`;
+    requestAnimationFrame(follow);
+  };
+  follow();
+
+  document.querySelectorAll('a, button, .card, .beyond-card, .spec, .c-link, .tags span, .project.featured').forEach(el => {
+    el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+} else if (cursor && cursorDot) {
+  cursor.style.display = 'none';
+  cursorDot.style.display = 'none';
+}
 
 // ========== REVEAL ON SCROLL ==========
 const io = new IntersectionObserver(
