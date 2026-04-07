@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reziko Chaladze — CTO · Full-Stack Engineer · Security Researcher</title>
+<meta name="description" content="Reziko Chaladze — CTO of Conciergia. Full-stack engineer, 2x International Cyber Security Olympiad competitor, 1st place winner. Based in Tbilisi, Georgia." />
+<meta name="author" content="Reziko Chaladze" />
+
+<meta property="og:title" content="Reziko Chaladze — CTO · Full-Stack Engineer" />
+<meta property="og:description" content="Building Conciergia. Cybersecurity olympiad champion. I build products, not prototypes." />
+<meta property="og:type" content="website" />
+<meta property="og:image" content="assets/photo.jpg" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='70' font-family='monospace' font-size='64' font-weight='800' text-anchor='middle' fill='%23fff'%3ER%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- custom cursor -->
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+
+<!-- noise overlay -->
+<div class="noise"></div>
+
+<!-- status bar -->
+<div class="statusbar">
+  <div class="sb-inner">
+    <span class="sb-item"><span class="dot live"></span> AVAILABLE FOR SELECT ENGAGEMENTS</span>
+    <span class="sb-item hide-sm">LAT 41.71° N · LON 44.78° E</span>
+    <span class="sb-item">TBILISI <span id="clock">—</span></span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#home" class="brand" data-scramble>R.CHALADZE<span class="blink">_</span></a>
+    <ul class="nav-links">
+      <li><a href="#about"><span class="n">01</span>About</a></li>
+      <li><a href="#arsenal"><span class="n">02</span>Arsenal</a></li>
+      <li><a href="#record"><span class="n">03</span>Record</a></li>
+      <li><a href="#work"><span class="n">04</span>Work</a></li>
+      <li><a href="#beyond"><span class="n">05</span>Beyond</a></li>
+      <li><a href="#contact"><span class="n">06</span>Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header id="home" class="hero">
+  <canvas id="grid-canvas"></canvas>
+
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="kicker">
+        <span class="k-line"></span>
+        <span class="k-text">PORTFOLIO / 2026 / ENGINEER · FOUNDER · RESEARCHER</span>
+      </div>
+
+      <h1 class="title">
+        <span class="line" data-scramble>REZIKO</span>
+        <span class="line italic" data-scramble>CHALADZE</span>
+      </h1>
+
+      <p class="lede">
+        CTO of <a href="#work" class="ul">Conciergia</a>. 2× International Cyber Security Olympiad competitor and <strong>1st place winner</strong>. National Physics Award recipient. I architect full-stack systems across web, mobile, cloud, and AI — and I build products, not prototypes.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#work" class="btn">View Work <span class="arr">→</span></a>
+        <a href="#contact" class="btn btn-ghost">Get in Touch</a>
+      </div>
+
+      <div class="hero-meta">
+        <div><span class="lbl">ROLE</span><span class="val">CTO · Full-Stack</span></div>
+        <div><span class="lbl">BASED</span><span class="val">Tbilisi, GE</span></div>
+        <div><span class="lbl">LANGS</span><span class="val">KA · EN · DE</span></div>
+        <div><span class="lbl">SINCE</span><span class="val">Code @ 12</span></div>
+      </div>
+    </div>
+
+    <aside class="hero-right">
+      <div class="photo-frame">
+        <div class="frame-corner tl"></div>
+        <div class="frame-corner tr"></div>
+        <div class="frame-corner bl"></div>
+        <div class="frame-corner br"></div>
+        <div class="photo-mask">
+          <img src="assets/photo.jpg" alt="Reziko Chaladze" onerror="this.style.display='none';this.parentElement.classList.add('no-img');" />
+          <div class="scanlines"></div>
+        </div>
+        <div class="frame-label">
+          <span>SUBJ_001</span>
+          <span>CHALADZE·R</span>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <div class="scroll-hint">
+    <span>SCROLL</span>
+    <span class="arrow">↓</span>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>★ CTO @ CONCIERGIA</span><span>★ 1ST PLACE · INT'L CYBER SECURITY OLYMPIAD</span><span>★ NATIONAL PHYSICS AWARD</span><span>★ STEAM INITIATIVE CO-INTRODUCER · GEORGIA</span><span>★ SCSA ALUMNUS</span><span>★ CAUCASUS UNIVERSITY · CS</span><span>★ 2ND PLACE · GEORGIAN NATIONAL BJJ</span>
+    <span>★ CTO @ CONCIERGIA</span><span>★ 1ST PLACE · INT'L CYBER SECURITY OLYMPIAD</span><span>★ NATIONAL PHYSICS AWARD</span><span>★ STEAM INITIATIVE CO-INTRODUCER · GEORGIA</span><span>★ SCSA ALUMNUS</span><span>★ CAUCASUS UNIVERSITY · CS</span><span>★ 2ND PLACE · GEORGIAN NATIONAL BJJ</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="section reveal">
+  <div class="section-head">
+    <span class="num">01</span>
+    <h2>About</h2>
+    <span class="head-rule"></span>
+  </div>
+  <div class="about-grid">
+    <div class="about-body">
+      <p class="drop">I wrote my first line of code at <strong>12</strong>. By <strong>14</strong>, I took <strong>1st place at the International Cyber Security Olympiad in Ukraine</strong> — competing against 12 teams with a 20-page research paper on social engineering attack vectors. I'm a <strong>National Physics Award recipient</strong> in Georgia and one of the people who introduced the <strong>STEAM initiative</strong> to the country.</p>
+
+      <p>Today I'm the <strong>CTO of Conciergia</strong> — a multi-tenant Hotel Management SaaS platform built for the hospitality market. I own the entire technical stack: product architecture, infrastructure, AI pipeline, and every client application.</p>
+
+      <p>Before that, I built web infrastructure and taught programming at <strong>Franklin Club</strong>, led IT systems at <strong>Clinic HoloMedi</strong>, founded the <strong>AKVE PARTY</strong> event series, and freelanced as a full-stack developer since 2021. Trained at <strong>SCSA</strong> (Scientific Cyber Security Association). Studied Computer Science at <strong>Caucasus University</strong>.</p>
+
+      <p class="pull">"I build products, not prototypes."</p>
+
+      <p>Open to hospitality tech partnerships, SaaS co-building, and connecting with founders across the Caucasus.</p>
+    </div>
+
+    <div class="about-side">
+      <div class="spec">
+        <div class="spec-head">TOP SKILLS</div>
+        <ul>
+          <li>Full-Stack Development</li>
+          <li>Artificial Intelligence</li>
+          <li>Cybersecurity</li>
+          <li>IT Management</li>
+        </ul>
+      </div>
+      <div class="spec">
+        <div class="spec-head">OPEN TO</div>
+        <ul>
+          <li>Hospitality tech partnerships</li>
+          <li>SaaS co-building</li>
+          <li>Caucasus founder network</li>
+          <li>On-site · Hybrid · Remote</li>
+        </ul>
+      </div>
+      <div class="spec">
+        <div class="spec-head">EDUCATION</div>
+        <ul>
+          <li>Caucasus University — CS</li>
+          <li>SCSA — Ethical Hacking, Python, Django, C, Web</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ARSENAL (SKILLS) -->
+<section id="arsenal" class="section reveal">
+  <div class="section-head">
+    <span class="num">02</span>
+    <h2>Arsenal</h2>
+    <span class="head-rule"></span>
+  </div>
+
+  <div class="arsenal-grid">
+    <div class="arsenal-col">
+      <div class="ac-label">FRONTEND</div>
+      <div class="tags">
+        <span>React</span><span>Vite</span><span>Next.js</span><span>Tailwind</span><span>HTML / CSS / JS</span><span>TypeScript</span>
+      </div>
+    </div>
+    <div class="arsenal-col">
+      <div class="ac-label">MOBILE</div>
+      <div class="tags">
+        <span>React Native</span><span>Expo</span>
+      </div>
+    </div>
+    <div class="arsenal-col">
+      <div class="ac-label">BACKEND</div>
+      <div class="tags">
+        <span>Python</span><span>Django</span><span>Node.js</span><span>Firebase</span><span>Firestore</span><span>Cloud Functions</span><span>Cloud Run</span><span>SQL</span><span>C</span>
+      </div>
+    </div>
+    <div class="arsenal-col">
+      <div class="ac-label">AI / ML</div>
+      <div class="tags">
+        <span>Vertex AI</span><span>Gemini</span><span>Claude API</span><span>Multi-Agent Orchestration</span><span>Prompt Engineering</span>
+      </div>
+    </div>
+    <div class="arsenal-col">
+      <div class="ac-label">CLOUD / DEVOPS</div>
+      <div class="tags">
+        <span>GCP</span><span>Cloud Tasks</span><span>Pub/Sub</span><span>Cloud Scheduler</span><span>GitHub Actions</span><span>Docker</span><span>Upstash Redis</span><span>CI/CD</span>
+      </div>
+    </div>
+    <div class="arsenal-col">
+      <div class="ac-label">SECURITY</div>
+      <div class="tags">
+        <span>Ethical Hacking</span><span>OSINT</span><span>Social Engineering Research</span><span>Firestore Rules Auditing</span><span>Post-Quantum Crypto</span>
+      </div>
+    </div>
+    <div class="arsenal-col">
+      <div class="ac-label">INTEGRATIONS</div>
+      <div class="tags">
+        <span>WhatsApp</span><span>Telegram</span><span>Facebook Messenger</span><span>OAuth</span><span>OHIP (Oracle Hospitality)</span>
+      </div>
+    </div>
+    <div class="arsenal-col">
+      <div class="ac-label">LEADERSHIP</div>
+      <div class="tags">
+        <span>CTO</span><span>Solo Architecture</span><span>IT Management</span><span>Mentorship</span><span>Technical Writing</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRACK RECORD -->
+<section id="record" class="section reveal">
+  <div class="section-head">
+    <span class="num">03</span>
+    <h2>Track Record</h2>
+    <span class="head-rule"></span>
+  </div>
+
+  <div class="timeline">
+    <div class="t-item">
+      <div class="t-year">NOW</div>
+      <div class="t-body">
+        <h4>CTO — Conciergia</h4>
+        <p>Architecting a multi-tenant Hotel Management SaaS end-to-end. Owning infra, data model, AI pipeline, web + mobile clients, and the <em>Conciergia Orchestra</em> — a 10-agent AI system.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">2024</div>
+      <div class="t-body">
+        <h4>Academy · Agency · Venture Studio — Concept</h4>
+        <p>Explored a hybrid Tbilisi model: train junior devs, generate agency revenue, take equity in early-stage startups. Audited usacademy.ge and built a full proposal.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">2021+</div>
+      <div class="t-body">
+        <h4>Freelance Full-Stack Developer</h4>
+        <p>Shipping production web products for Georgian businesses. Franklin Club, Akve Party, Gorimaps, Eduhub, UsAcademy, Revaz Debugger — all live.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">—</div>
+      <div class="t-body">
+        <h4>IT Lead — Clinic HoloMedi</h4>
+        <p>Led the clinic's full IT systems stack and internal infrastructure.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">—</div>
+      <div class="t-body">
+        <h4>Franklin Club — Engineer & Instructor</h4>
+        <p>Built web infrastructure. Taught programming to students. Published cybersecurity research and articles.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">—</div>
+      <div class="t-body">
+        <h4>Founder — AKVE PARTY</h4>
+        <p>Founded and ran an event series. Shipped the brand's web presence.</p>
+      </div>
+    </div>
+    <div class="t-item highlight">
+      <div class="t-year">★</div>
+      <div class="t-body">
+        <h4>1st Place — International Cyber Security Olympiad · Ukraine</h4>
+        <p>At 14. 12 competing teams. 20-page research paper on <em>Ways and Mechanisms of Protecting Information Space from Harmful Information and Psychological Influence</em> — social engineering attack vectors.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">★</div>
+      <div class="t-body">
+        <h4>2nd International Cyber Security Tournament</h4>
+        <p>Returned to international competition — 2× international cybersecurity competitor. Continued research into information-space defense and offensive social engineering tradecraft.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">★</div>
+      <div class="t-body">
+        <h4>National Physics Award — Georgia</h4>
+        <p>Recognized nationally for performance in physics.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">★</div>
+      <div class="t-body">
+        <h4>STEAM Initiative — Georgia</h4>
+        <p>Among the people who introduced the STEAM initiative to the country.</p>
+      </div>
+    </div>
+    <div class="t-item">
+      <div class="t-year">12</div>
+      <div class="t-body">
+        <h4>First Line of Code</h4>
+        <p>Where it all started.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work" class="section reveal">
+  <div class="section-head">
+    <span class="num">04</span>
+    <h2>Selected Work</h2>
+    <span class="head-rule"></span>
+  </div>
+
+  <article class="project featured">
+    <div class="project-meta">
+      <span class="label">// featured case study</span>
+      <h3>Conciergia</h3>
+      <p class="project-sub">Multi-tenant Hotel Management SaaS · hospitality market</p>
+      <div class="role">
+        <span class="lbl">ROLE</span>
+        <span>CTO · Sole Technical Architect</span>
+      </div>
+      <div class="role">
+        <span class="lbl">STATUS</span>
+        <span>Active build · multi-year</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <p>Full-stack SaaS platform I architect and build as CTO. Multi-tenant by design, GCP-native, AI-augmented. Handles guest communication, operations, and hospitality intelligence.</p>
+      <ul class="bullets">
+        <li><strong>Conciergia Orchestra:</strong> 10-agent AI orchestration system — Orchestrator, Backend, Frontend, Mobile, Tester, Security, DevOps, Docs, AI Specialist — powered by Claude + Gemini.</li>
+        <li><strong>Omnichannel messaging:</strong> WhatsApp, Telegram, and Facebook Messenger unified into a single guest inbox with Facebook OAuth onboarding for hotel managers.</li>
+        <li><strong>Dual environments:</strong> dev/prod Firebase with GitHub Actions CI/CD and Cloud Run for deployable services.</li>
+        <li><strong>Infra migration:</strong> moved off Redis/Celery to a lean GCP-native stack — Cloud Tasks, Pub/Sub, Cloud Scheduler, Upstash Redis.</li>
+        <li><strong>Security pass:</strong> full code audit surfacing Firestore rule vulnerabilities, missing rate limits, and a broken Gemini model reference. All remediated.</li>
+        <li><strong>Hotel PMS integration:</strong> exploring OHIP (Oracle Hospitality Integration Platform) for deep PMS connectivity.</li>
+      </ul>
+      <div class="tags small">
+        <span>React/Vite</span><span>React Native/Expo</span><span>Firebase/Firestore</span><span>Vertex AI</span><span>Gemini</span><span>Claude API</span><span>GCP</span><span>Cloud Run</span><span>Docker</span>
+      </div>
+    </div>
+  </article>
+
+  <div class="projects-grid">
+    <article class="card">
+      <div class="card-head"><span>01</span><span>revaz.ge</span></div>
+      <h4>Revaz Debugger</h4>
+      <p>Personal portfolio CMS built in Django. Custom admin, multilingual content model, and project/pricing management — all self-hosted.</p>
+      <div class="tags tiny"><span>Django</span><span>Python</span><span>SQLite</span><span>JS</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span>02</span><span>usacademy.ge</span></div>
+      <h4>UsAcademy</h4>
+      <p>Full-stack platform for a Tbilisi education brand. Built the site and produced a Venture-Studio audit + pitch deck.</p>
+      <div class="tags tiny"><span>Python</span><span>Django</span><span>JS</span><span>API</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span>03</span><span>franklin.ge</span></div>
+      <h4>Franklin Club</h4>
+      <p>Multilingual media & community platform. Custom server, CMS, article publishing pipeline. Cybersecurity research published here.</p>
+      <div class="tags tiny"><span>Django</span><span>Foundation</span><span>SQL</span><span>Python</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span>04</span><span>gorimaps.ge</span></div>
+      <h4>Gorimaps</h4>
+      <p>Interactive city mapping web app on top of JS map APIs, backed by a Django service.</p>
+      <div class="tags tiny"><span>JS / API</span><span>Django</span><span>SQLite</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span>05</span><span>eduhub.franklin.ge</span></div>
+      <h4>Eduhub</h4>
+      <p>Learning hub with course content and member management, integrated into the Franklin ecosystem.</p>
+      <div class="tags tiny"><span>Django</span><span>Python</span><span>JS</span></div>
+    </article>
+
+    <article class="card">
+      <div class="card-head"><span>06</span><span>akve.ge</span></div>
+      <h4>AKVE PARTY</h4>
+      <p>Event series I founded — and the site I shipped for it. Booking flows, custom identity, full-stack backend.</p>
+      <div class="tags tiny"><span>Django</span><span>Sass</span><span>SQL</span></div>
+    </article>
+  </div>
+
+  <div class="research">
+    <div class="research-head">// published cybersecurity research</div>
+    <ul class="research-list">
+      <li>
+        <span class="r-year">2022</span>
+        <span class="r-title">Hacktivism — franklin.ge</span>
+        <span class="r-tag">Cyber · Writing</span>
+      </li>
+      <li>
+        <span class="r-year">2022</span>
+        <span class="r-title">Hacker ASPs — Social Engineering</span>
+        <span class="r-tag">Hacking · SE</span>
+      </li>
+      <li>
+        <span class="r-year">2020</span>
+        <span class="r-title">Open Source Intelligence — SCSA Journal</span>
+        <span class="r-tag">OSINT · Research</span>
+      </li>
+      <li>
+        <span class="r-year">★</span>
+        <span class="r-title">Ways and Mechanisms of Protecting Information Space from Harmful Information and Psychological Influence</span>
+        <span class="r-tag">1st Place · Int'l Olympiad</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- BEYOND -->
+<section id="beyond" class="section reveal">
+  <div class="section-head">
+    <span class="num">05</span>
+    <h2>Beyond the Codebase</h2>
+    <span class="head-rule"></span>
+  </div>
+
+  <p class="beyond-lede">"Discipline on the mat, on the road, and in the codebase."</p>
+
+  <div class="beyond-grid">
+    <div class="beyond-card">
+      <div class="bc-num">01</div>
+      <h4>BJJ</h4>
+      <p>2nd place — Georgian National BJJ Wrestling Tournament. Grappling teaches what shipping teaches: position before submission.</p>
+    </div>
+    <div class="beyond-card">
+      <div class="bc-num">02</div>
+      <h4>Chess</h4>
+      <p>Strategy on the board. Pattern recognition off it. Same muscle that designs a system from scratch.</p>
+    </div>
+    <div class="beyond-card">
+      <div class="bc-num">03</div>
+      <h4>Motorcycles</h4>
+      <p>2017 Victory Octane. V-twin therapy between deploys.</p>
+    </div>
+    <div class="beyond-card">
+      <div class="bc-num">04</div>
+      <h4>Muscle Cars</h4>
+      <p>Chevy Camaro RS — my daily dose of American muscle. Mechanical honesty matters.</p>
+    </div>
+    <div class="beyond-card">
+      <div class="bc-num">05</div>
+      <h4>Dark Renaissance Art</h4>
+      <p>I create dark Renaissance-inspired pieces exploring identity and mortality. Chiaroscuro in every sense.</p>
+    </div>
+    <div class="beyond-card">
+      <div class="bc-num">06</div>
+      <h4>Quantum & Cyber</h4>
+      <p>Superposition, entanglement, post-quantum cryptography. Cybersecurity research and OSINT published.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section reveal">
+  <div class="section-head">
+    <span class="num">06</span>
+    <h2>Contact</h2>
+    <span class="head-rule"></span>
+  </div>
+  <div class="contact-box">
+    <p class="big">Let's build something that ships.</p>
+    <p class="sml">Open to hospitality-tech partnerships, SaaS co-building, and serious conversations with founders across the Caucasus.</p>
+    <div class="contact-links">
+      <a href="mailto:chaladze@revaz.ge" class="c-link">
+        <span class="c-lbl">EMAIL</span>
+        <span class="c-val">chaladze@revaz.ge <span class="arr">→</span></span>
+      </a>
+      <a href="https://github.com/cryptical-akira" target="_blank" rel="noopener" class="c-link">
+        <span class="c-lbl">GITHUB</span>
+        <span class="c-val">@cryptical-akira <span class="arr">→</span></span>
+      </a>
+      <a href="https://linkedin.com/in/reziko-chaladze" target="_blank" rel="noopener" class="c-link">
+        <span class="c-lbl">LINKEDIN</span>
+        <span class="c-val">in/reziko-chaladze <span class="arr">→</span></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="foot">
+    <div><span class="f-brand">R.CHALADZE</span> © 2026</div>
+    <div class="f-right">
+      <span>TBILISI · GEORGIA</span>
+      <span class="sep">·</span>
+      <span>Built from scratch — no frameworks</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
