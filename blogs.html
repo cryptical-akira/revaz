@@ -160,7 +160,7 @@
       const list = document.getElementById('post-list');
       if(!posts.length){ list.innerHTML = '<div class="loading">NO POSTS YET.</div>'; return; }
       list.innerHTML = posts.map(p => `
-        <a class="post-item" href="blogs.html?post=${encodeURIComponent(p.slug)}">
+        <a class="post-item" href="${p.url || ('blogs.html?post=' + encodeURIComponent(p.slug))}">
           <span class="date">${fmtDate(p.date)}</span>
           ${p.image ? `<img class="thumb" src="posts/${p.image}" alt="">` : '<span></span>'}
           <div>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>ჰაკერი, როგორც ფსიქოლოგი — სოციალური ინჟინერია · Reziko Chaladze</title>
+<meta name="description" content="ტექნოლოგიები გაძლიერდა, მაგრამ ადამიანი კვლავ რჩება ყველაზე სუსტ რგოლად. სტატია სოციალური ინჟინერიის, ფიშინგის, Deepfake-ების და თავდაცვის სტრატეგიების შესახებ." />
+<meta name="author" content="Reziko Chaladze" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="article" />
+<meta property="og:site_name" content="Reziko Chaladze" />
+<meta property="og:title" content="ჰაკერი, როგორც ფსიქოლოგი — სოციალური ინჟინერია" />
+<meta property="og:description" content="ტექნოლოგიები გაძლიერდა, მაგრამ ადამიანი კვლავ რჩება ყველაზე სუსტ რგოლად. სტატია სოციალური ინჟინერიის, ფიშინგის, Deepfake-ების და თავდაცვის სტრატეგიების შესახებ." />
+<meta property="og:url" content="https://revaz.ge/hacker-psychologist.html" />
+<meta property="og:image" content="https://revaz.ge/posts/hacker-psychologist.png" />
+<meta property="og:image:alt" content="ჰაკერი, როგორც ფსიქოლოგი" />
+<meta property="article:author" content="Reziko Chaladze" />
+<meta property="article:published_time" content="2026-04-08" />
+<meta property="article:tag" content="Cybersecurity" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ჰაკერი, როგორც ფსიქოლოგი — სოციალური ინჟინერია" />
+<meta name="twitter:description" content="ტექნოლოგიები გაძლიერდა, მაგრამ ადამიანი კვლავ რჩება ყველაზე სუსტ რგოლად." />
+<meta name="twitter:image" content="https://revaz.ge/posts/hacker-psychologist.png" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23000'/%3E%3Ctext x='50' y='70' font-family='monospace' font-size='64' font-weight='800' text-anchor='middle' fill='%23fff'%3ER%3C/text%3E%3C/svg%3E" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;700;800&family=Space+Grotesk:wght@300;400;500;600;700&family=Fraunces:ital,wght@0,300;0,700;1,400&display=swap" rel="stylesheet" />
+
+<link rel="stylesheet" href="style.css" />
+<style>
+  .blog-wrap{max-width:880px;margin:0 auto;padding:160px 32px 120px}
+  .back-link{display:inline-flex;align-items:center;gap:10px;font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mute);margin-bottom:48px;transition:color .3s}
+  .back-link:hover{color:#fff}
+  .post-meta{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--mute);text-transform:uppercase;margin-bottom:20px;display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .post-meta .tag{border:1px solid var(--line2);padding:4px 10px}
+  .post-hero{width:100%;max-height:420px;object-fit:cover;border:1px solid var(--line);margin-bottom:40px}
+  .post-body{font-family:var(--sans);font-size:17px;line-height:1.75;color:#ddd}
+  .post-body h1{font-family:var(--serif);font-size:clamp(40px,6vw,72px);font-weight:700;line-height:1;letter-spacing:-.02em;color:#fff;margin-bottom:40px}
+  .post-body h2{font-family:var(--serif);font-size:32px;font-weight:700;color:#fff;margin:56px 0 20px;letter-spacing:-.01em}
+  .post-body h3{font-family:var(--serif);font-size:24px;font-weight:700;color:#fff;margin:40px 0 16px}
+  .post-body p{margin-bottom:24px}
+  .post-body a{color:#fff;text-decoration:underline;text-decoration-color:var(--mute);text-underline-offset:4px}
+  .post-body strong{color:#fff;font-weight:600}
+  .post-body em{font-style:italic}
+  .post-body ul,.post-body ol{margin:0 0 24px 24px}
+  .post-body li{margin-bottom:10px;list-style:disc}
+  .post-body ol li{list-style:decimal}
+  .post-body blockquote{border-left:2px solid #fff;padding:8px 24px;margin:32px 0;color:var(--mute);font-family:var(--serif);font-style:italic;font-size:20px}
+  .post-body code{font-family:var(--mono);font-size:14px;background:var(--bg2);padding:2px 6px;border-radius:2px;border:1px solid var(--line)}
+  .post-body hr{border:0;border-top:1px solid var(--line);margin:48px 0}
+  .loading{font-family:var(--mono);font-size:12px;color:var(--mute);letter-spacing:.1em}
+</style>
+</head>
+<body>
+
+<div class="cursor"></div>
+<div class="cursor-dot"></div>
+<div class="noise"></div>
+
+<div class="statusbar">
+  <div class="sb-inner">
+    <span class="sb-item"><span class="dot live"></span> AVAILABLE FOR SELECT ENGAGEMENTS</span>
+    <span class="sb-item hide-sm">LAT 41.71° N · LON 44.78° E</span>
+    <span class="sb-item">TBILISI <span id="clock">—</span></span>
+  </div>
+</div>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand">R.CHALADZE<span class="blink">_</span></a>
+    <ul class="nav-links">
+      <li><a href="index.html#about"><span class="n">01</span>About</a></li>
+      <li><a href="index.html#arsenal"><span class="n">02</span>Arsenal</a></li>
+      <li><a href="index.html#record"><span class="n">03</span>Record</a></li>
+      <li><a href="index.html#work"><span class="n">04</span>Work</a></li>
+      <li><a href="index.html#beyond"><span class="n">05</span>Beyond</a></li>
+      <li><a href="blogs.html"><span class="n">06</span>Blog</a></li>
+      <li><a href="index.html#contact"><span class="n">07</span>Contact</a></li>
+    </ul>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+  </div>
+</nav>
+
+<main class="blog-wrap">
+  <a href="blogs.html" class="back-link">← ALL POSTS</a>
+  <div class="post-meta">
+    <span>APR 08, 2026</span>
+    <span class="tag">CYBERSECURITY</span>
+  </div>
+  <img class="post-hero" src="posts/hacker-psychologist.png" alt="ჰაკერი, როგორც ფსიქოლოგი" />
+  <article id="post-content" class="post-body">
+    <div class="loading">LOADING…</div>
+  </article>
+</main>
+
+<footer>
+  <div class="foot">
+    <div><span class="f-brand">R.CHALADZE</span> © 2026</div>
+    <div class="f-right">
+      <span>TBILISI · GEORGIA</span>
+      <span class="sep">·</span>
+      <span>Built from scratch — no frameworks</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script src="script.js"></script>
+<script>
+  fetch('posts/hacker-psychologist.md',{cache:'no-store'})
+    .then(r => r.text())
+    .then(md => { document.getElementById('post-content').innerHTML = marked.parse(md); })
+    .catch(() => { document.getElementById('post-content').innerHTML = '<p>Failed to load post.</p>'; });
+</script>
+
+<!-- GoatCounter analytics -->
+<script data-goatcounter="https://revaz.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
